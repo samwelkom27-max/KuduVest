@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KuduVest</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function showDashboard(event) {
+      event.preventDefault();
+      document.getElementById('auth-page').classList.add('hidden');
+      document.getElementById('dashboard-page').classList.remove('hidden');
+    }
+  </script>
+</head>
+<body class="bg-gray-100">  <!-- Auth Page -->  <div id="auth-page" class="flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+      <h1 class="text-2xl font-bold mb-6 text-center">KuduVest Login / Sign Up</h1>
+      <form onsubmit="showDashboard(event)">
+        <input type="text" placeholder="First Name" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="text" placeholder="Surname" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="tel" placeholder="Phone" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="password" placeholder="Password" class="w-full p-3 border rounded-lg mb-3" required>
+        <button type="submit" class="w-full bg-black text-white py-3 rounded-lg">Continue</button>
+      </form>
+    </div>
+  </div>  <!-- Dashboard Page -->  <div id="dashboard-page" class="hidden p-6">
+    <header class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold">KuduVest Dashboard</h1>
+      <button onclick="location.reload()" class="text-red-600">Logout</button>
+    </header><div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <!-- Info Section -->
+  <div>
+    <div class="bg-white p-6 rounded-2xl shadow mb-4">
+      <h2 class="font-bold text-xl mb-3">Why Choose KuduVest?</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-700">
+        <li>No fake guarantees</li>
+        <li>Withdrawals via official banking rails</li>
+        <li>Transparent risk and fees</li>
+        <li>Human support on WhatsApp or email</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Deposit Section -->
+  <div>
+    <div class="bg-white p-6 rounded-2xl shadow">
+      <h2 class="font-bold text-xl mb-3">Deposit Form</h2>
+      <form>
+        <input type="text" placeholder="First Name" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="text" placeholder="Surname" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="tel" placeholder="Phone" class="w-full p-3 border rounded-lg mb-3" required>
+
+        <input type="text" placeholder="Bank Name" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="text" placeholder="Account Holder" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="text" placeholder="Account Number" class="w-full p-3 border rounded-lg mb-3" required>
+        <input type="text" placeholder="Branch Code" class="w-full p-3 border rounded-lg mb-3" required>
+        <select class="w-full p-3 border rounded-lg mb-3" required>
+          <option value="">Select Account Type</option>
+          <option>Cheque</option>
+          <option>Savings</option>
+        </select>
+
+        <input type="number" placeholder="Deposit Amount" class="w-full p-3 border rounded-lg mb-3" required>
+
+        <label class="flex items-center mb-3">
+          <input type="checkbox" class="mr-2" required>
+          <span>I confirm my bank details are correct</span>
+        </label>
+
+        <button type="submit" class="w-full bg-black text-white py-3 rounded-lg">Proceed to Payment</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center mt-10 text-gray-600">© KuduVest</footer>
+
+  </div></body>
+  </html>
